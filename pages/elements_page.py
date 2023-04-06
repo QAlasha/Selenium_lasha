@@ -13,5 +13,6 @@ class TexBoxPage(BasePage):
         self.element_is_visible(self.locators.EMAIL).send_keys('QA_lasha@mail.ru')
         self.element_is_visible(self.locators.CURRENT_ADDRESS).send_keys('Moscow')
         self.element_is_visible(self.locators.PERMANENT_ADDRESS).send_keys('Klin')
-        self.element_is_not_visible(self.locators.SUBMIT).click()
+        self.go_to_footer(self.locators.FOOTER)
+        self.element_is_visible(self.locators.SUBMIT).click()
         time.sleep(5)
