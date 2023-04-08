@@ -16,3 +16,10 @@ class TexBoxPage(BasePage):
         self.go_to_footer(self.locators.FOOTER)
         self.element_is_visible(self.locators.SUBMIT).click()
         time.sleep(5)
+
+    def check_field_form(self):
+        full_name = self.element_is_present(self.locators.FULL_NAME_CREATE).text
+        email = self.element_is_present(self.locators.EMAIL_CREATE).text
+        current_address = self.element_is_present(self.locators.CURRENT_ADDRESS_CREATE).text
+        permanent_address = self.element_is_present(self.locators.PERMANENT_ADDRESS_CREATE).text
+        return full_name, email, permanent_address, current_address
